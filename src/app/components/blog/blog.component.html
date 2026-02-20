@@ -1,0 +1,41 @@
+<main>
+
+    <section>
+        <h2> Formulario</h2>
+        <div class="form">
+            <aside>
+
+                <div class="form1">
+                    <input type="text" placeholder="Introduce el titulo" [(ngModel)]="formulario.titulo">
+                </div> 
+                <div class="form2">
+                    <input type="url" placeholder="Introduce la URL de la imagen" [(ngModel)]="formulario.imagen">
+                </div>
+                <div>
+                    <input type="text" placeholder="Introduce el texto" [(ngModel)]="formulario.texto">
+                </div>
+                <div>
+                    <input type="date" placeholder="Introduce la fecha de publicacion" [(ngModel)]="formulario.publicacion">
+                </div>
+                <button class="enviarBtn" (click)="guardarData()">Enviar</button>
+            </aside>
+        </div>
+    </section>
+
+    <section>
+        <div class="noticias">
+
+            @for (noticia of arrayNoticias; track noticia) {
+
+            <article>
+                <figure>
+                    <img [src]="noticia.imagen" [alt]="noticia.titulo">
+                </figure>
+                <h3>{{noticia.titulo}}</h3>
+                <p>{{noticia.texto}}</p>
+                <p>Fecha de Publicacion: {{noticia.publicacion}}</p>
+            </article>
+        }
+        </div>
+    </section>
+</main>
